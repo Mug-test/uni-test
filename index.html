@@ -120,8 +120,8 @@ h2.sec{font-size:13px;letter-spacing:.16em;color:var(--crema);font-weight:800;ma
  <h1>测测你的<br><span class="hl">本命大学</span></h1>
  <p class="sub">如果能重来一次，回到 18 岁去申请美国前 30 和英国前 10 的大学，哪一所和你的思维方式最合拍？</p>
  <div class="pills"><span class="pill">19 道生活小场景</span><span class="pill">约 4 分钟</span><span class="pill">40 所大学</span><span class="pill">6 个思维维度</span></div>
- <div class="redeem" id="redeem"><label for="code">输入兑换码开始</label>
-  <div class="row"><input id="code" inputmode="numeric" maxlength="8" placeholder="购买后收到的兑换码" autocomplete="off"><button class="btn" id="go">开始</button></div>
+ <div class="redeem" id="redeem"><label for="code">输入测试密码</label>
+  <div class="row"><input id="code" inputmode="numeric" maxlength="8" placeholder="订单里的 4 位数字" autocomplete="off"><button class="btn" id="go">开始</button></div>
   <p class="msg" id="msg"></p></div>
  <p class="note">测的是你和学校在思维方式上合不合拍，不是录取概率。凭第一反应选就好。</p>
  <p class="legal">© 2026 马克杯 原创测试，禁止搬运、改编或商用<br>非官方测试，与文中提及的任何大学及排名机构无关联<br>结果仅供参考，不构成录取预测或申请建议<br>学校信息参考 US News、QS、Fiske Guide 及各校官网<br>作答仅在本设备计算，不上传、不存储</p>
@@ -144,8 +144,8 @@ const NQ=D.qs.length, N=NQ+1;
 let ans=Array(N).fill(null),cur=0;
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));window.scrollTo(0,0)}
 $('#go').onclick=()=>{const v=$('#code').value.trim(),r=$('#redeem');
- if(CODEH.includes(hc(v))){r.className='redeem ok';$('#msg').textContent='兑换成功，开始吧';setTimeout(()=>{show('s-quiz');render()},350)}
- else{r.className='redeem bad';$('#msg').textContent='兑换码不对，请检查后再试'}};
+ if(CODEH.includes(hc(v))){r.className='redeem ok';$('#msg').textContent='密码正确，开始吧';setTimeout(()=>{show('s-quiz');render()},350)}
+ else{r.className='redeem bad';$('#msg').textContent='密码不对，再核对一下订单里的 4 位数字'}};
 $('#code').addEventListener('keydown',e=>{if(e.key==='Enter')$('#go').click()});
 function render(){
  const last=cur===NQ, q=last?D.region:D.qs[cur];
